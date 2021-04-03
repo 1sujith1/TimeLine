@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+  <p>Count Down TIMER to DATE 05-05-2082</p>
+
+  <h1 id="timer"></h1>
+
+
+  <script>
+    var count = 86400000 * 22312;
+    var counter = setInterval(timer, 1000);
+
+    function timer() {
+      count = count - 1;
+      if (count <= 0) {
+        clearInterval(counter);
+        //counter ended
+        return;
+      }
+
+      //showing the number of seconds here
+      document.getElementById("timer").innerHTML = count + " seconds remaining";
+
+    }
+  </script>
+
+</body>
+
+</html>
