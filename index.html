@@ -25,34 +25,61 @@
     <h5 id="MonthsTimer"></h5>
     <h5 id="YearsTimer"></h5>
   </div>
-
+  
+  <div style="text-align: center;">
+    <h1 id="SecondsCompletedTimer"></h1>
+    <h2 id="MinutesCompletedTimer"></h2>
+    <h3 id="HoursCompletedTimer"></h3>
+    <h3 id="DaysCompletedTimer"></h3>
+    <h4 id="WeeksCompletedTimer"></h4>
+    <h5 id="MonthsCompletedTimer"></h5>
+    <h5 id="YearsCompletedTimer"></h5>
+  </div>
 
   <script>
     //today date
     var today = new Date();
     //00-jan,01-feb,02-mar
     var endDate = new Date(2082, 04, 05);
-    //get time in seconds
-    var count = (endDate - today) / 1000;
+    //birth day
+    var birth = new Date(1998,0,1)
+    //get end time in seconds
+    var countToEnd = (endDate - today) / 1000;
+    //birth time to today
+    var countFromStart = (today - birth)/1000;
 
     var counter = setInterval(timer, 1000);
 
     function timer() {
-      count = count - 1;
+      
+      countToEnd = countToEnd - 1;
+      
+      countFromStart = countFromStart + 1;
+      
       if (count <= 0) {
         clearInterval(counter);
         //counter ended
         return;
       }
 
-      //showing the time here
-      document.getElementById("SecondsTimer").innerHTML = Math.floor(count) + " seconds remaining";
-      document.getElementById("MinutesTimer").innerHTML = Math.floor(count / 60) + " minutes remaining";
-      document.getElementById("HoursTimer").innerHTML = Math.floor(count / 3600) + " hours remaining";
-      document.getElementById("DaysTimer").innerHTML = Math.floor(count / 86400) + " days remaining";
-      document.getElementById("WeeksTimer").innerHTML = Math.floor(count / 604800) + " weeks remaining";
-      document.getElementById("MonthsTimer").innerHTML = Math.floor(count / 2592000) + " Months remaining";
-      document.getElementById("YearsTimer").innerHTML = Math.floor(count / 31557600) + " Years remaining";
+      //showing the end time here
+      document.getElementById("SecondsTimer").innerHTML = Math.floor(countToEnd) + " seconds remaining";
+      document.getElementById("MinutesTimer").innerHTML = Math.floor(countToEnd / 60) + " minutes remaining";
+      document.getElementById("HoursTimer").innerHTML = Math.floor(countToEnd / 3600) + " hours remaining";
+      document.getElementById("DaysTimer").innerHTML = Math.floor(countToEnd / 86400) + " days remaining";
+      document.getElementById("WeeksTimer").innerHTML = Math.floor(countToEnd / 604800) + " weeks remaining";
+      document.getElementById("MonthsTimer").innerHTML = Math.floor(countToEnd / 2592000) + " Months remaining";
+      document.getElementById("YearsTimer").innerHTML = Math.floor(countToEnd / 31557600) + " Years remaining";
+      
+      
+       //showing the start time here
+      document.getElementById("SecondsTimer").innerHTML = Math.floor(countFromStart) + " seconds remaining";
+      document.getElementById("MinutesTimer").innerHTML = Math.floor(countFromStart / 60) + " minutes remaining";
+      document.getElementById("HoursTimer").innerHTML = Math.floor(countFromStart / 3600) + " hours remaining";
+      document.getElementById("DaysTimer").innerHTML = Math.floor(countFromStart / 86400) + " days remaining";
+      document.getElementById("WeeksTimer").innerHTML = Math.floor(countFromStart / 604800) + " weeks remaining";
+      document.getElementById("MonthsTimer").innerHTML = Math.floor(countFromStart / 2592000) + " Months remaining";
+      document.getElementById("YearsTimer").innerHTML = Math.floor(countFromStart / 31557600) + " Years remaining";
 
     }
   </script>
