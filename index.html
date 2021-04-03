@@ -9,13 +9,30 @@
 </head>
 
 <body>
-  <p>Count Down TIMER to DATE 05-05-2082</p>
 
-  <h1 id="timer"></h1>
+  <h3 align="center">Count Down TIMER to DATE 05-05-2082</h3>
+
+  <h3 style="color:#00f">
+    <marquee>Please USE YOUR TIME Wisely</marquee>
+  </h3>
+
+  <div style="text-align: center;">
+    <h1 id="SecondsTimer"></h1>
+    <h2 id="MinutesTimer"></h2>
+    <h3 id="HoursTimer"></h3>
+    <h4 id="DaysTimer"></h4>
+    <h5 id="WeeksTimer"></h5>
+  </div>
 
 
   <script>
-    var count = 86400000 * 22312;
+    //today date
+    var today = new Date();
+    //00-jan,01-feb,02-mar
+    var endDate = new Date(2082, 04, 05);
+    //get time in seconds
+    var count = (endDate - today) / 1000;
+
     var counter = setInterval(timer, 1000);
 
     function timer() {
@@ -26,8 +43,12 @@
         return;
       }
 
-      //showing the number of seconds here
-      document.getElementById("timer").innerHTML = count + " seconds remaining";
+      //showing the time here
+      document.getElementById("SecondsTimer").innerHTML = Math.floor(count) + " seconds remaining";
+      document.getElementById("MinutesTimer").innerHTML = Math.floor(count / 60) + " minutes remaining";
+      document.getElementById("HoursTimer").innerHTML = Math.floor(count / 3600) + " hours remaining";
+      document.getElementById("DaysTimer").innerHTML = Math.floor(count / 86400) + " days remaining";
+      document.getElementById("WeeksTimer").innerHTML = Math.floor(count / 604800) + " weeks remaining";
 
     }
   </script>
