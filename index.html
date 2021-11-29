@@ -21,7 +21,7 @@
 
   <body>
     <h2 align="center">
-      Count Down TIMER from DATE 01-01-1998 to DATE 05-05-2082
+      Count Down TIMER from DATE 01-01-1998 to DATE 01-01-2082
     </h2>
 
     <h2 style="color: #00f">
@@ -66,7 +66,7 @@
       //today date
       var today = new Date();
       //00-jan,01-feb,02-mar
-      var endDate = new Date(2082, 04, 05);
+      var endDate = new Date(2082, 0, 1);
       //birth day
       var birth = new Date(1998, 0, 1);
       //get end time in seconds
@@ -122,7 +122,7 @@
     </script>
     <script>
       // Set the date we're counting down to
-      var countDownDate = new Date("May 5, 2082 00:00:00").getTime();
+      var countDownDate = new Date("Jan 1, 2082 16:18:22").getTime();
       var countStartDate = new Date("Jan 1, 1998 16:18:22").getTime();
 
       // Update the count down every 1 second
