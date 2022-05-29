@@ -84,6 +84,22 @@
         if (countToEnd <= 0) {
           clearInterval(counter);
           //counter ended
+          document.getElementById("SecondsTimer").innerHTML ="TIME OVER.........";
+          document.getElementById("MinutesTimer").innerHTML ="";
+          document.getElementById("HoursTimer").innerHTML ="";
+          document.getElementById("DaysTimer").innerHTML ="";
+          document.getElementById("WeeksTimer").innerHTML ="";
+          document.getElementById("MonthsTimer").innerHTML ="";
+          document.getElementById("YearsTimer").innerHTML ="";
+          
+          document.getElementById("SecondsCompletedTimer").innerHTML ="TIME OVER.........";
+          document.getElementById("MinutesCompletedTimer").innerHTML ="";
+          document.getElementById("HoursCompletedTimer").innerHTML ="";
+          document.getElementById("DaysCompletedTimer").innerHTML ="";
+          document.getElementById("WeeksCompletedTimer").innerHTML ="";
+          document.getElementById("MonthsCompletedTimer").innerHTML ="";
+          document.getElementById("YearsCompletedTimer").innerHTML ="";
+          
           return;
         }
 
